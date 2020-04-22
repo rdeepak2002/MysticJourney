@@ -18,7 +18,6 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
 		animator = GetComponent<Animator>();
 		myRigidBody = GetComponent<Rigidbody2D>();
-
 	}
 	
 	// Update is called once per frame
@@ -30,6 +29,12 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	void UpdateAnimationAndMove() {
+		animator.SetBool("running", isRunning);
+
+		if (Input.GetKeyDown("right shift")) {
+			isRunning = !isRunning;
+		}
+
 		if(change != Vector3.zero) {
 			MoveCharacter();
 			animator.SetFloat("moveX", change.x);
