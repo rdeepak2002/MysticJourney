@@ -6540,7 +6540,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkingSpeed: 1
   runningSpeed: 2
-  isRunning: 1
+  isRunning: 0
 --- !u!1 &346654503
 GameObject:
   m_ObjectHideFlags: 0
