@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraMovement : MonoBehaviour {
 
 	public Transform target;
-	public float smoothing; 
+	public float smoothing;
 
 	// Use this for initialization
 	void Start () {
