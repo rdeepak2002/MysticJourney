@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour {
 	public CameraMovement cameraMovementScript;
 	public PlayerMovement playerMovementScript;
 	public DialogueManager dialogueManager;
+	public AudioClip voice;
 	public bool dialogueDisplayed = false;
 
 	protected Animator animator;
@@ -47,12 +48,11 @@ public class Enemy : MonoBehaviour {
 
 	public void manageDialogue() {
 		if (!dialogueDisplayed) {
-			dialogueManager.ShowDialogueBox(dialogue);
+			dialogueManager.ShowDialogueBox(dialogue, voice);
 			dialogueDisplayed = true;
 		}
 
 		if (!dialogueManager.dialogueActive && !preparedForBattle){
-			Debug.Log("TODO: MAKE TEXT BOX WITH WORDS DISAPPEAR");
 			audioSource.clip = bossMusic;
 			audioSource.Play();
 			playerMovementScript.movieScenePlaying = false;

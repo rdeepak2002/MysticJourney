@@ -8,6 +8,8 @@ public class DialogueManager : MonoBehaviour {
 	public GameObject dBox;
 	public Text dText;
 	public Text hint;
+	public AudioSource audioSource;
+	public float textSpeed = 0.05f;
 
 	public bool dialogueActive;
 
@@ -30,21 +32,27 @@ public class DialogueManager : MonoBehaviour {
 		}
 	}
 
-	public void ShowDialogueBox(string dialogue) {
+	public void ShowDialogueBox(string dialogue, AudioClip voice) {
 		dialogueActive = true;
 		dBox.SetActive(true);
 		dText.text = "";
 
-		StartCoroutine(writer(dialogue));
+		StartCoroutine(writer(dialogue, voice));
     }
 
-	IEnumerator writer(string dialogue)
+	IEnumerator writer(string dialogue, AudioClip voice)
 	{
+		audioSource.clip = voice;
+
+		audioSource.Play();
+		audioSource.loop = true;
+
 		foreach (var letter in dialogue.ToCharArray())
 		{
 			dText.text += letter;
-			yield return new WaitForSeconds(.07f);
+			yield return new WaitForSeconds(textSpeed);
 		}
+		audioSource.Pause();
 
 		hint.text = "Press Space to Continue";
 	}
