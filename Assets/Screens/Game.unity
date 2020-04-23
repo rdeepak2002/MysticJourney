@@ -19133,4 +19133,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dBox: {fileID: 1783559322}
   dText: {fileID: 385187399}
+  hint: {fileID: 173414321}
   dialogueActive: 0
