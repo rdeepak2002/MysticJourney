@@ -6,11 +6,18 @@ public class Mage : Enemy {
 
 	// Use this for initialization
 	void Start () {
-		
+		animator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		checkDistance();
+		if (preparedForBattle) {
+			battleLoop();
+		}
 	}
+
+	void battleLoop() {
+		facePlayer();
+    }
 }

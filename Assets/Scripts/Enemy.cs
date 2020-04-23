@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour {
 
 	public int health;
 	public string enemyName;
+	public string dialogue;
 	public int baseAttack;
 	public float moveSpeed;
 	public float battleRadius;
@@ -14,7 +15,12 @@ public class Enemy : MonoBehaviour {
 	public AudioSource audioSource;
 	public AudioClip bossMusic;
 	public CameraMovement cameraMovementScript;
-	public bool preparedForBattle = false;
+	public PlayerMovement playerMovementScript;
+	public DialogueManager dialogueManager;
+	public bool dialogueDisplayed = false;
+
+	protected Animator animator;
+	protected bool preparedForBattle = false;
 
 	// Use this for initialization
 	void Start () {
@@ -33,11 +39,36 @@ public class Enemy : MonoBehaviour {
 	}
 
 	protected void prepareForBattle() {
-		audioSource.clip = bossMusic;
-		audioSource.Play();
-		preparedForBattle = true;
+		playerMovementScript.movieScenePlaying = true;
+		audioSource.Pause();
 		cameraMovementScript.target = transform;
+		manageDialogue();
     }
+
+	public void manageDialogue() {
+		if (!dialogueDisplayed) {
+			dialogueManager.ShowDialogueBox(dialogue);
+			dialogueDisplayed = true;
+		}
+
+		if (!dialogueManager.dialogueActive && !preparedForBattle){
+			Debug.Log("TODO: MAKE TEXT BOX WITH WORDS DISAPPEAR");
+			audioSource.clip = bossMusic;
+			audioSource.Play();
+			playerMovementScript.movieScenePlaying = false;
+			animator.SetBool("attacking", true);
+			preparedForBattle = true;
+		}
+	}
+
+	public void facePlayer() {
+		if (target.position.x >= transform.position.x) {
+			transform.localRotation = Quaternion.Euler(0, 0, 0);
+		}
+		else {
+			transform.localRotation = Quaternion.Euler(0, 180, 0);
+		}
+	}
 
 	protected void moveTowards() {
 		transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);

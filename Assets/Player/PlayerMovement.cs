@@ -5,10 +5,9 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
 
 	public float walkingSpeed;
-
 	public float runningSpeed;
-
 	public bool isRunning;
+	public bool movieScenePlaying;
 	
 	private Rigidbody2D myRigidBody;
 	private Vector3 change;
@@ -23,8 +22,10 @@ public class PlayerMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		change = Vector3.zero;
-		change.x = Input.GetAxisRaw("Horizontal");
-		change.y = Input.GetAxisRaw("Vertical");
+		if (!movieScenePlaying) {
+			change.x = Input.GetAxisRaw("Horizontal");
+			change.y = Input.GetAxisRaw("Vertical");
+		}
 		UpdateAnimationAndMove();
 	}
 
