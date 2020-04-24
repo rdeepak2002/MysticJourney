@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour {
 	public float battleRadius;
 	public float attackRadius;
 	public Transform target;
+	public Transform cameraFocus;
 	public AudioSource audioSource;
 	public AudioClip bossMusic;
 	public CameraMovement cameraMovementScript;
@@ -42,7 +43,7 @@ public class Enemy : MonoBehaviour {
 	protected void prepareForBattle() {
 		playerMovementScript.movieScenePlaying = true;
 		audioSource.Pause();
-		cameraMovementScript.target = transform;
+		cameraMovementScript.target = cameraFocus;
 		manageDialogue();
     }
 

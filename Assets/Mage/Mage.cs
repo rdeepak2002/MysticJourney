@@ -11,6 +11,7 @@ public class Mage : Enemy {
 	
 	// Update is called once per frame
 	void Update () {
+		facePlayer();
 		checkDistance();
 		if (preparedForBattle) {
 			battleLoop();
@@ -18,6 +19,6 @@ public class Mage : Enemy {
 	}
 
 	void battleLoop() {
-		facePlayer();
+
     }
 }
