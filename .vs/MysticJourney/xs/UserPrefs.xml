@@ -2,13 +2,14 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TitleScreenManager.cs">
     <Files>
       <File FileName="Assets/Scripts/CameraResolution.cs" Line="11" Column="17" />
-      <File FileName="Assets/Scripts/CameraMovement.cs" Line="1" Column="1" />
-      <File FileName="Assets/Player/PlayerMovement.cs" Line="10" Column="32" />
-      <File FileName="Assets/Scripts/DialogueManager.cs" Line="46" Column="1" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="35" Column="3" />
-      <File FileName="Assets/Mage/Mage.cs" Line="21" Column="21" />
-      <File FileName="Assets/Scripts/TitleScreenManager.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/TitleScreenManager.cs" Line="7" Column="14" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" />
+      <File FileName="Assets/Player/PlayerMovement.cs" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" />
+      <File FileName="Assets/Scripts/Enemy.cs" />
+      <File FileName="Assets/Mage/Mage.cs" />
+      <File FileName="Assets/Scripts/TitleScreenManager.cs" Line="21" Column="45" />
+      <File FileName="Assets/Scripts/SceneTransition.cs" />
+      <File FileName="Assets/Scripts/AudioSourceExtensions.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -25,18 +26,10 @@
           </Node>
         </State>
       </Pad>
-      <Pad Id="MonoDevelop.Debugger.WatchPad">
-        <State />
-      </Pad>
-      <Pad Id="MonoDevelop.UnitTesting.TestPad">
-        <State name="__root__">
-          <Node name="MysticJourney" expanded="True" selected="True" />
-        </State>
-      </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.MysticJourney PreferredExecutionTarget="765068fc-b0e0-4720-91c7-6260ede1f0e2" />
+  <MonoDevelop.Ide.ItemProperties.MysticJourney PreferredExecutionTarget="fa57b952-b5fc-40c6-861a-edfd9bb54bfa" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
