@@ -7,7 +7,7 @@
       <File FileName="Assets/Scripts/DialogueManager.cs" />
       <File FileName="Assets/Scripts/Enemy.cs" />
       <File FileName="Assets/Mage/Mage.cs" />
-      <File FileName="Assets/Scripts/TitleScreenManager.cs" Line="21" Column="45" />
+      <File FileName="Assets/Scripts/TitleScreenManager.cs" Line="27" Column="26" />
       <File FileName="Assets/Scripts/SceneTransition.cs" />
       <File FileName="Assets/Scripts/AudioSourceExtensions.cs" />
     </Files>
