@@ -1,15 +1,9 @@
 ﻿<Properties StartupConfiguration="{089A4386-3283-8D65-18D0-8EC50D76C5FA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TitleScreenManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
     <Files>
-      <File FileName="Assets/Scripts/CameraResolution.cs" Line="11" Column="17" />
-      <File FileName="Assets/Scripts/CameraMovement.cs" />
-      <File FileName="Assets/Player/PlayerMovement.cs" />
-      <File FileName="Assets/Scripts/DialogueManager.cs" />
-      <File FileName="Assets/Scripts/Enemy.cs" />
-      <File FileName="Assets/Mage/Mage.cs" />
-      <File FileName="Assets/Scripts/TitleScreenManager.cs" Line="27" Column="26" />
-      <File FileName="Assets/Scripts/SceneTransition.cs" />
-      <File FileName="Assets/Scripts/AudioSourceExtensions.cs" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="20" Column="25" />
+      <File FileName="Assets/Scripts/HudManager.cs" Line="26" Column="20" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -19,7 +13,7 @@
               <Node name="Mage" expanded="True" />
               <Node name="Player" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="TitleScreenManager.cs" selected="True" />
+                <Node name="Enemy.cs" selected="True" />
               </Node>
               <Node name="SpriteSheets" expanded="True" />
             </Node>
@@ -29,7 +23,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.MysticJourney PreferredExecutionTarget="fa57b952-b5fc-40c6-861a-edfd9bb54bfa" />
+  <MonoDevelop.Ide.ItemProperties.MysticJourney PreferredExecutionTarget="36507a59-277b-4e88-bd63-bb42303867e1" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />

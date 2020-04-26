@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour {
 
@@ -18,9 +19,9 @@ public class Enemy : MonoBehaviour {
 	public CameraMovement cameraMovementScript;
 	public PlayerMovement playerMovementScript;
 	public DialogueManager dialogueManager;
+	public HudManager hudManager;
 	public AudioClip voice;
 	public bool dialogueDisplayed = false;
-
 	protected Animator animator;
 	protected bool preparedForBattle = false;
 
@@ -37,7 +38,7 @@ public class Enemy : MonoBehaviour {
 	protected void checkDistance() {
         if (!preparedForBattle && Vector3.Distance(target.position, transform.position) <= battleRadius) {
 			prepareForBattle();
-        }
+		}
 	}
 
 	protected void prepareForBattle() {
@@ -54,6 +55,7 @@ public class Enemy : MonoBehaviour {
 		}
 
 		if (!dialogueManager.dialogueActive && !preparedForBattle){
+			hudManager.showHud();
 			audioSource.clip = bossMusic;
 			audioSource.Play();
 			playerMovementScript.movieScenePlaying = false;

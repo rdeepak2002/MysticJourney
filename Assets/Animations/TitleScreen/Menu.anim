@@ -70,13 +70,13 @@ AnimationClip:
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 7.9333334
+        time: 9.883333
         value: 0
         inSlope: 0.028007377
         outSlope: 0.028007377
         tangentMode: 0
       - serializedVersion: 2
-        time: 8.5
+        time: 9.966666
         value: 0.253
         inSlope: 0.109036535
         outSlope: 0.109036535
@@ -199,13 +199,13 @@ AnimationClip:
         outSlope: 0
         tangentMode: 0
       - serializedVersion: 2
-        time: 7.9333334
+        time: 9.883333
         value: 0
         inSlope: 0.028007377
         outSlope: 0.028007377
         tangentMode: 0
       - serializedVersion: 2
-        time: 8.5
+        time: 9.966666
         value: 0.253
         inSlope: 0.109036535
         outSlope: 0.109036535
