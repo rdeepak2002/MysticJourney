@@ -25,16 +25,6 @@ public class Enemy : MonoBehaviour {
 	protected Animator animator;
 	protected bool preparedForBattle = false;
 
-	// Use this for initialization
-	void Start () {
-
-	}
-	
-	// Update is called once per frame
-	void Update () {
-
-	}
-
 	protected void checkDistance() {
         if (!preparedForBattle && Vector3.Distance(target.position, transform.position) <= battleRadius) {
 			prepareForBattle();

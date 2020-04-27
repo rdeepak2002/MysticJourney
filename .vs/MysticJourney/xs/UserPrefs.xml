@@ -1,19 +1,17 @@
 ﻿<Properties StartupConfiguration="{089A4386-3283-8D65-18D0-8EC50D76C5FA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HudManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/DialogueManager.cs" Line="20" Column="25" />
-      <File FileName="Assets/Scripts/HudManager.cs" Line="26" Column="20" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="8" Column="16" />
+      <File FileName="Assets/Scripts/HudManager.cs" Line="11" Column="21" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MysticJourney" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Mage" expanded="True" />
               <Node name="Player" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="Enemy.cs" selected="True" />
+                <Node name="HudManager.cs" selected="True" />
               </Node>
               <Node name="SpriteSheets" expanded="True" />
             </Node>

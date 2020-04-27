@@ -11,6 +11,8 @@ public class TitleScreenManager : MonoBehaviour {
 	public GameObject fadeOutPanel;
 
     public AudioSource music;
+	public AudioSource sfx;
+	public AudioClip startSFX;
 
 	public void Awake()
 	{
@@ -20,8 +22,12 @@ public class TitleScreenManager : MonoBehaviour {
 
 	public void changeScene(string sceneName) {
         music.mute = true;
+		sfx.loop = false;
+		sfx.clip = startSFX;
+		sfx.Play();
         GameObject panel = Instantiate(fadeOutPanel, Vector3.zero, Quaternion.identity) as GameObject;
 		Invoke("MyLoadingFunction", 5f);
+		Destroy(panel, 10);
 	}
 
 	void MyLoadingFunction()
