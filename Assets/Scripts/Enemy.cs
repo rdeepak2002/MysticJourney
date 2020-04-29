@@ -46,12 +46,8 @@ public class Enemy : MonoBehaviour {
 		}
 
 		if (!dialogueManager.dialogueActive && !preparedForBattle){
-			hudManager.showHud();
-			audioSource.clip = bossMusic;
-			audioSource.Play();
-			playerMovementScript.movieScenePlaying = false;
 			animator.SetBool("attacking", true);
-			preparedForBattle = true;
+			StartCoroutine(prepare());
 		}
 	}
 
@@ -68,5 +64,14 @@ public class Enemy : MonoBehaviour {
 
 	protected void moveTowards() {
 		transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
+	}
+
+	IEnumerator prepare() {
+		yield return new WaitForSeconds(1.0f);
+		hudManager.showHud();
+		audioSource.clip = bossMusic;
+		audioSource.Play();
+		playerMovementScript.movieScenePlaying = false;
+		preparedForBattle = true;
 	}
 }

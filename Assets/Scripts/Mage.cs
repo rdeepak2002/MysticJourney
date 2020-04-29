@@ -27,11 +27,11 @@ public class Mage : Enemy {
 
 	void battleLoop() {
 		if (!busy) {
-            StartCoroutine(Fire(10, 45, 0.3f, 5.0f));
+            StartCoroutine(Fire(2, 36, 0.1f, 10.0f));
         }
     }
 
-	IEnumerator Fire(int n, double angle, float dt, float speed) {
+	IEnumerator Fire(int n, double angle, float waitTime, float speed) {
 		busy = true;
 
 		Vector3 direction = target.position - firehand.transform.position;
@@ -41,20 +41,22 @@ public class Mage : Enemy {
 		float yComp = direction.y;
 
 		for (int i = -n/2; i < n/2+1; i++) {
-            double theta = i*(angle * DegToRad);
+			if (!(n % 2 == 0 && i == 0) || n*angle >= 360) {
+				double theta = i * (angle * DegToRad);
 
-			float ca = (float)Math.Cos(theta);
-			float sa = (float)Math.Sin(theta);
+				float ca = (float)Math.Cos(theta);
+				float sa = (float)Math.Sin(theta);
 
-			Vector3 newDir = new Vector3(ca * xComp - sa * yComp, sa * xComp + ca * yComp, 0);
+				Vector3 newDir = new Vector3(ca * xComp - sa * yComp, sa * xComp + ca * yComp, 0);
 
 
-			fireball.GetComponent<EnemyProjectile>().change = newDir;
-			fireball.GetComponent<EnemyProjectile>().speed = speed;
-			Instantiate(fireball, firehand.transform.position, Quaternion.identity);
+				fireball.GetComponent<EnemyProjectile>().change = newDir;
+				fireball.GetComponent<EnemyProjectile>().speed = speed;
+				Instantiate(fireball, firehand.transform.position, Quaternion.identity);
+			}
         }
 
-		yield return new WaitForSeconds(dt);
+		yield return new WaitForSeconds(waitTime);
 
 
 		busy = false;
