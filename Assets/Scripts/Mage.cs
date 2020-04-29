@@ -27,11 +27,11 @@ public class Mage : Enemy {
 
 	void battleLoop() {
 		if (!busy) {
-            StartCoroutine(Fire(3, 45));
+            StartCoroutine(Fire(10, 45, 0.3f, 5.0f));
         }
     }
 
-	IEnumerator Fire(int n, double angle) {
+	IEnumerator Fire(int n, double angle, float dt, float speed) {
 		busy = true;
 
 		Vector3 direction = target.position - firehand.transform.position;
@@ -40,8 +40,7 @@ public class Mage : Enemy {
 		float xComp = direction.x;
 		float yComp = direction.y;
 
-		for (int i = -1; i < 2; i++) {
-
+		for (int i = -n/2; i < n/2+1; i++) {
             double theta = i*(angle * DegToRad);
 
 			float ca = (float)Math.Cos(theta);
@@ -51,10 +50,11 @@ public class Mage : Enemy {
 
 
 			fireball.GetComponent<EnemyProjectile>().change = newDir;
+			fireball.GetComponent<EnemyProjectile>().speed = speed;
 			Instantiate(fireball, firehand.transform.position, Quaternion.identity);
         }
 
-		yield return new WaitForSeconds(0.2f);
+		yield return new WaitForSeconds(dt);
 
 
 		busy = false;
