@@ -10,15 +10,18 @@ public class PlayerMovement : MonoBehaviour {
 	public float runningSpeed;
 	public bool isRunning;
 	public bool movieScenePlaying;
-	
-	private Rigidbody2D myRigidBody;
+	public bool isInvincible = false;
+
 	private Vector3 change;
+	private SpriteRenderer spriteRenderer;
+	private Rigidbody2D myRigidBody;
 	private Animator animator;
 
 	// Use this for initialization
 	void Start () {
 		animator = GetComponent<Animator>();
 		myRigidBody = GetComponent<Rigidbody2D>();
+		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
 	
 	// Update is called once per frame
@@ -62,6 +65,20 @@ public class PlayerMovement : MonoBehaviour {
 	}
 
 	public void TakeDamage(int damage) {
-		health -= damage;
+		if (!isInvincible) {
+			health -= damage;
+		}
+
+		StartCoroutine(makeInvincible());
     }
+
+	IEnumerator makeInvincible() {
+		if (!isInvincible) {
+			isInvincible = true;
+			spriteRenderer.color = new Color(255, 0, 0);
+			yield return new WaitForSeconds(0.5f);
+			isInvincible = false;
+			spriteRenderer.color = new Color(255, 255, 255);
+		}
+	}
 }

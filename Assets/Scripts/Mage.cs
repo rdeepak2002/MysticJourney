@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Mage : Enemy {
+	public GameObject fireball;
+	public GameObject firehand;
+
+	private bool busy = false;
 
 	// Use this for initialization
 	void Start () {
@@ -19,6 +23,20 @@ public class Mage : Enemy {
 	}
 
 	void battleLoop() {
-
+		if (!busy) {
+            StartCoroutine(Fire3());
+        }
     }
+
+	IEnumerator Fire3() {
+		busy = true;
+
+		Vector3 direction = (target.position - firehand.transform.position);
+		direction.Normalize();
+		fireball.GetComponent<EnemyProjectile>().change = direction;
+		Instantiate(fireball, firehand.transform.position, Quaternion.identity);
+
+		yield return new WaitForSeconds(0.1f);
+		busy = false;
+	}
 }

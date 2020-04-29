@@ -22,6 +22,7 @@ public class Enemy : MonoBehaviour {
 	public HudManager hudManager;
 	public AudioClip voice;
 	public bool dialogueDisplayed = false;
+	protected bool facingRight = true;
 	protected Animator animator;
 	protected bool preparedForBattle = false;
 
@@ -57,9 +58,11 @@ public class Enemy : MonoBehaviour {
 	public void facePlayer() {
 		if (target.position.x >= transform.position.x) {
 			transform.localRotation = Quaternion.Euler(0, 0, 0);
+			facingRight = true;
 		}
 		else {
 			transform.localRotation = Quaternion.Euler(0, 180, 0);
+			facingRight = false;
 		}
 	}
 
