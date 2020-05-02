@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour {
 	public bool isRunning;
 	public bool movieScenePlaying;
 	public bool isInvincible = false;
+	public GameObject kyubue;
 
 	private Vector3 change;
 	private SpriteRenderer spriteRenderer;

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MysticJourney", "MysticJourney.csproj", "{089A4386-3283-8D65-18D0-8EC50D76C5FA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{F71F2D5A-F7E5-1A0B-C2B9-9794F5ECCD7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,10 +9,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{089A4386-3283-8D65-18D0-8EC50D76C5FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{089A4386-3283-8D65-18D0-8EC50D76C5FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{089A4386-3283-8D65-18D0-8EC50D76C5FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{089A4386-3283-8D65-18D0-8EC50D76C5FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F71F2D5A-F7E5-1A0B-C2B9-9794F5ECCD7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F71F2D5A-F7E5-1A0B-C2B9-9794F5ECCD7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F71F2D5A-F7E5-1A0B-C2B9-9794F5ECCD7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F71F2D5A-F7E5-1A0B-C2B9-9794F5ECCD7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

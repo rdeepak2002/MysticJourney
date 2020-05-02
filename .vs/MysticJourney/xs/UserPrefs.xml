@@ -1,20 +1,17 @@
-﻿<Properties StartupConfiguration="{089A4386-3283-8D65-18D0-8EC50D76C5FA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Mage.cs">
+﻿<Properties StartupConfiguration="{F71F2D5A-F7E5-1A0B-C2B9-9794F5ECCD7B}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CameraMovement.cs">
     <Files>
-      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="73" Column="6" />
-      <File FileName="Assets/Scripts/DialogueManager.cs" Line="53" Column="4" />
-      <File FileName="Assets/Scripts/EnemyProjectile.cs" Line="23" Column="1" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="51" Column="4" />
-      <File FileName="Assets/Scripts/Mage.cs" Line="30" Column="38" />
+      <File FileName="Assets/Scripts/PlayerMovement.cs" Line="38" Column="31" />
+      <File FileName="Assets/Scripts/KyubueMovement.cs" Line="55" Column="12" />
+      <File FileName="Assets/Scripts/CameraMovement.cs" Line="16" Column="17" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="MysticJourney" expanded="True">
             <Node name="Assets" expanded="True">
-              <Node name="Player" expanded="True" />
               <Node name="Scripts" expanded="True">
-                <Node name="Mage.cs" selected="True" />
+                <Node name="CameraMovement.cs" selected="True" />
               </Node>
               <Node name="SpriteSheets" expanded="True" />
             </Node>
@@ -26,6 +23,7 @@
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.MysticJourney PreferredExecutionTarget="36507a59-277b-4e88-bd63-bb42303867e1" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="486bc2d3-e273-45b2-9519-ef7a967d5189" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

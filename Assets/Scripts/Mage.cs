@@ -27,7 +27,7 @@ public class Mage : Enemy {
 
 	void battleLoop() {
 		if (!busy) {
-            StartCoroutine(Fire(5, 45, 0.1f, 10.0f));
+            StartCoroutine(Fire(3, 60, 0.8f, 10.0f));
         }
     }
 
