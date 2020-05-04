@@ -74,6 +74,7 @@
     <Compile Include="Assets\Scripts\Mage.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\SceneTransition.cs" />
+    <Compile Include="Assets\Scripts\TimelineManager.cs" />
     <Compile Include="Assets\Scripts\TitleScreenManager.cs" />
     <None Include="Assets\Music\EssentialSoundEffects\INFO.txt" />
     <None Include="Assets\SpriteSheets\sources.txt" />

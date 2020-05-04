@@ -9,38 +9,43 @@ public class DialogueManager : MonoBehaviour {
 	public Text dText;
 	public Text hint;
 	public AudioSource audioSource;
+    public AudioClip voice;
 	public float textSpeed = 0.05f;
 
 	public bool dialogueActive;
 
 	// Use this for initialization
 	void Start () {
+		dText.text = "";
 		hint.text = "";
 
-		if (!dialogueActive) {
-		    dBox.SetActive(false);
-		}
+		dialogueActive = false;
+		dBox.SetActive(false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (hint.text != "" && dialogueActive && Input.GetKeyDown(KeyCode.Space)) {
-			dBox.SetActive(false);
-			dialogueActive = false;
-			dText.text = "blank";
-			hint.text = "";
+			HideDialogueBox();
 		}
 	}
 
-	public void ShowDialogueBox(string dialogue, AudioClip voice) {
+	public void HideDialogueBox() {
+		dBox.SetActive(false);
+		dialogueActive = false;
+		dText.text = "blank";
+		hint.text = "";
+	}
+
+	public void ShowDialogueBox(string dialogue) {
 		dialogueActive = true;
 		dBox.SetActive(true);
 		dText.text = "";
 
-		StartCoroutine(writer(dialogue, voice));
+		StartCoroutine(writer(dialogue));
     }
 
-	IEnumerator writer(string dialogue, AudioClip voice)
+	IEnumerator writer(string dialogue)
 	{
 		audioSource.clip = voice;
 

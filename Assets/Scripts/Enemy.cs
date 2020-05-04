@@ -20,7 +20,6 @@ public class Enemy : MonoBehaviour {
 	public PlayerMovement playerMovementScript;
 	public DialogueManager dialogueManager;
 	public HudManager hudManager;
-	public AudioClip voice;
 	public bool dialogueDisplayed = false;
 	protected bool facingRight = true;
 	protected Animator animator;
@@ -41,7 +40,7 @@ public class Enemy : MonoBehaviour {
 
 	public void manageDialogue() {
 		if (!dialogueDisplayed) {
-			dialogueManager.ShowDialogueBox(dialogue, voice);
+			dialogueManager.ShowDialogueBox(dialogue);
 			dialogueDisplayed = true;
 		}
 
