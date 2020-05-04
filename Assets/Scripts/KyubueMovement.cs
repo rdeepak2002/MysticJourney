@@ -5,9 +5,10 @@ using Pathfinding;
 
 public class KyubueMovement : MonoBehaviour
 {
-    public Transform target;
+    public GameObject target;
     public float distanceRadius;
-    public float speed = 200f;
+    public float minSpeed = 200f;
+    public float maxSpeed = 400f;
     public float nextWaypointDistance = 3f;
 
     private Animator animator;
@@ -16,6 +17,7 @@ public class KyubueMovement : MonoBehaviour
     private Path path;
     private int currentWaypoint = 0;
     private bool reachedEndOfPath = false;
+    private float speed;
 
     // Start is called before the first frame update
     void Start() {
@@ -23,13 +25,15 @@ public class KyubueMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         seeker = GetComponent<Seeker>();
 
+        speed = minSpeed;
+
         InvokeRepeating("UpdatePath", 0f, 0.5f);
     }
 
     // Update is called once per frame
     void Update()
     {
-        UpdateAnimation(); 
+        UpdateAnimation();
 
         if (path == null)
         {
@@ -42,9 +46,18 @@ public class KyubueMovement : MonoBehaviour
             return;
         }
 
-        if (Vector3.Distance(target.position, transform.position) > distanceRadius)
+        if (Vector3.Distance(target.transform.position, transform.position) > distanceRadius)
         {
-            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+            if (Vector3.Distance(target.transform.position, transform.position) > distanceRadius*1.5) {
+                speed = maxSpeed;
+            }
+            else {
+
+                speed = minSpeed;
+            }
+
+
+                Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;
 
             rb.AddForce(force);
@@ -76,7 +89,7 @@ public class KyubueMovement : MonoBehaviour
 
     void UpdatePath() {
         if (seeker.IsDone()) {
-            seeker.StartPath(rb.position, target.position, OnPathComplete);
+            seeker.StartPath(rb.position, target.transform.position, OnPathComplete);
         }
     }
 
