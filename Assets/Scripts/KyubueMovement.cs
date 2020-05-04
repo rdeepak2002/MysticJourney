@@ -10,6 +10,7 @@ public class KyubueMovement : MonoBehaviour
     public float minSpeed = 200f;
     public float maxSpeed = 400f;
     public float nextWaypointDistance = 3f;
+    public bool movieScenePlaying = true;
 
     private Animator animator;
     private Rigidbody2D rb;
@@ -46,7 +47,7 @@ public class KyubueMovement : MonoBehaviour
             return;
         }
 
-        if (Vector3.Distance(target.transform.position, transform.position) > distanceRadius)
+        if (!movieScenePlaying && Vector3.Distance(target.transform.position, transform.position) > distanceRadius)
         {
             if (Vector3.Distance(target.transform.position, transform.position) > distanceRadius*1.5) {
                 speed = maxSpeed;
@@ -57,7 +58,7 @@ public class KyubueMovement : MonoBehaviour
             }
 
 
-                Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;
 
             rb.AddForce(force);
