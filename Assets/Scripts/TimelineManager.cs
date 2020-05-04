@@ -9,6 +9,7 @@ public class TimelineManager : MonoBehaviour
     public DialogueManager dialogueManager;
 
     private PlayableDirector director;
+    private bool canPlayDirector = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,15 +20,15 @@ public class TimelineManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //director.Pause();
-        //Debug.Log(dialogueManager.dialogueActive);
         if (dialogueManager.dialogueActive)
         {
-            director.Pause();
+            director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+            canPlayDirector = true;
         }
-        else
+        else if(canPlayDirector)
         {
-            director.Play();
+            director.playableGraph.GetRootPlayable(0).SetSpeed(1);
+            canPlayDirector = false;
         }
     }
 }
