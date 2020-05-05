@@ -31,6 +31,7 @@ public class DialogueManager : MonoBehaviour {
 	}
 
 	public void HideDialogueBox() {
+		audioSource.Stop();
 		dBox.SetActive(false);
 		dialogueActive = false;
 		dText.text = "blank";

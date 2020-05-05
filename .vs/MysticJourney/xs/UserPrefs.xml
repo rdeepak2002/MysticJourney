@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{F71F2D5A-F7E5-1A0B-C2B9-9794F5ECCD7B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TimelineManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueManager.cs">
     <Files>
       <File FileName="Assets/Scripts/PlayerMovement.cs" Line="12" Column="31" />
       <File FileName="Assets/Scripts/KyubueMovement.cs" Line="53" Column="34" />
       <File FileName="Assets/Scripts/CameraMovement.cs" />
-      <File FileName="Assets/Scripts/DialogueManager.cs" Line="33" Column="19" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="42" Column="28" />
-      <File FileName="Assets/Scripts/TimelineManager.cs" Line="23" Column="32" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="22" Column="1" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="18" Column="17" />
+      <File FileName="Assets/Scripts/TimelineManager.cs" Line="30" Column="65" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
