@@ -18,7 +18,7 @@ public class KyubueMovement : MonoBehaviour
     private Seeker seeker;
     private Path path;
     private int currentWaypoint = 0;
-    private bool reachedEndOfPath = false;
+    //private bool reachedEndOfPath = false;
     private float speed;
 
     // Start is called before the first frame update
@@ -44,7 +44,7 @@ public class KyubueMovement : MonoBehaviour
 
         if (currentWaypoint >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
+            //reachedEndOfPath = true;
             return;
         }
 
