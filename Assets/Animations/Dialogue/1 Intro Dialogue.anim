@@ -53,7 +53,7 @@ AnimationClip:
   m_Events:
   - time: 0
     functionName: ShowDialogueBox
-    data: Where am I?
+    data: 'YOU: Where am I?'
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
