@@ -11,8 +11,8 @@ public class HudManager : MonoBehaviour {
 	public Image[] specials;
 	public bool hudActive;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		if (!hudActive)
 		{
 			bars.SetActive(false);
