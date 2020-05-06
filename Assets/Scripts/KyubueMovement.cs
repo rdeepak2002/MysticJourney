@@ -6,7 +6,8 @@ using Pathfinding;
 public class KyubueMovement : MonoBehaviour
 {
     public GameObject target;
-    public float distanceRadius;
+    public float distanceRadius = 1.5f;
+    public float runDistanceRadius = 2.0f;
     public float minSpeed = 200f;
     public float maxSpeed = 400f;
     public float nextWaypointDistance = 3f;
@@ -32,7 +33,7 @@ public class KyubueMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         UpdateAnimation();
 
@@ -49,14 +50,12 @@ public class KyubueMovement : MonoBehaviour
 
         if (!movieScenePlaying && Vector3.Distance(target.transform.position, transform.position) > distanceRadius)
         {
-            if (Vector3.Distance(target.transform.position, transform.position) > distanceRadius*1.5) {
+            if (Vector3.Distance(target.transform.position, transform.position) > runDistanceRadius) {
                 speed = maxSpeed;
             }
             else {
-
                 speed = minSpeed;
             }
-
 
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;

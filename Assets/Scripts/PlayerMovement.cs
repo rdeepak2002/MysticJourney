@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		change = Vector3.zero;
 		if (!movieScenePlaying) {
 			change.x = Input.GetAxisRaw("Horizontal");

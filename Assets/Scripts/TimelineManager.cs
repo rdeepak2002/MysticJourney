@@ -20,15 +20,17 @@ public class TimelineManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dialogueManager.dialogueActive)
-        {
-            director.playableGraph.GetRootPlayable(0).SetSpeed(0);
-            canPlayDirector = true;
-        }
-        else if(canPlayDirector)
-        {
-            director.playableGraph.GetRootPlayable(0).SetSpeed(1);
-            canPlayDirector = false;
+        if (director.playableGraph.IsValid()) {
+            if (dialogueManager.dialogueActive)
+            {
+                director.playableGraph.GetRootPlayable(0).SetSpeed(0);
+                canPlayDirector = true;
+            }
+            else if (canPlayDirector)
+            {
+                director.playableGraph.GetRootPlayable(0).SetSpeed(1);
+                canPlayDirector = false;
+            }
         }
     }
 }
