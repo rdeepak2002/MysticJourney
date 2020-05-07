@@ -1,4 +1,2 @@
-Base path: /Applications/Unity/Hub/Editor/2017.4.39f1/Unity.app/Contents
+Base path: '/Applications/Unity/Hub/Editor/2019.3.11f1/Unity.app/Contents', plugins path '/Applications/Unity/Hub/Editor/2019.3.11f1/PlaybackEngines'
 Cmd: initializeCompiler
-
-Quitting shader compiler process

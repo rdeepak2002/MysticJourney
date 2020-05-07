@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DialogueManager : MonoBehaviour {
 
 	public GameObject dBox;
-	public Text dText;
-	public Text hint;
+	public TextMeshProUGUI dText;
+	public TextMeshProUGUI hint;
 	public AudioSource audioSource;
     public AudioClip voice;
 	public float textSpeed = 0.05f;
